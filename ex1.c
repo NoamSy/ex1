@@ -31,8 +31,8 @@ int main() {
   scanf("%d", &position);
   int withOne = (1 << position);
   int withZero = (0 << position);
-  int sumOne = withOne ^ number; // in bitwise XOR is basically like saying +
-  int sumZero = withZero ^ number;
+  int sumOne = withOne + number;
+  int sumZero = withZero + number;
   printf("Number with bit %d set to 1: %d\n", position, sumOne);
   printf("Number with bit %d set to 0: %d\n", position, sumZero);
   /*Scan two integers (representing number and a position)
@@ -67,7 +67,7 @@ int main() {
   /* Scan two integers in octal base
   sum them up and print the result in hexadecimal base
   Print only 4 bits, in positions: 3,5,7,11 in the result. */
-  int number2;
+  int number2=3;
   printf("Please enter the first number (octal):\n");
   scanf("%o", &number);
   printf("Please enter the second number (octal):\n");
@@ -80,6 +80,5 @@ int main() {
   printf("The sum in hexadecimal: %X\n", sum);
   printf("The 3,5,7,11 bits are: %d%d%d%d\n", thirdBit, fithBit, seventhBit, eleventhBit);
   printf("Bye!\n");
-  
   return 0;
 }
