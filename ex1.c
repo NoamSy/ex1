@@ -30,9 +30,9 @@ int main() {
   printf("Please enter a position:\n");
   scanf("%d", &position);
   int withOne = (1 << position);
-  int withZero = (0 << position);
-  int sumOne = withOne + number;
-  int sumZero = withZero + number;
+  //int withZero = (0 << position);
+  int sumOne = number | (withOne); // check if number has already 1, if no -> we will still add it with withOne
+  int sumZero = number  & ~(withOne); //check if in number of position provided is 1, if so the & will replace with 0, 0&0 =0
   printf("Number with bit %d set to 1: %d\n", position, sumOne);
   printf("Number with bit %d set to 0: %d\n", position, sumZero);
   /*Scan two integers (representing number and a position)
@@ -60,7 +60,7 @@ int main() {
   If the number is even - print 1, else - print 0. */
   printf("Please enter a number:\n");
   scanf("%d", &number);
-  printf("%d\n", !(number & 1)); //get last number, we learned at lesson if last bit = 1 then its odd number, if last bit = 0 then its even number
+  printf("%d\n", ((number & 1)^1)); //get last number, we learned at lesson if last bit = 1 then its odd number, if last bit = 0 then its even number
 
   // 3, 5, 7, 11
   printf("\n3, 5, 7, 11:\n");
@@ -71,12 +71,12 @@ int main() {
   printf("Please enter the first number (octal):\n");
   scanf("%o", &number);
   printf("Please enter the second number (octal):\n");
-  scanf("%o", &number2);
+  scanf(" %o", &number2);
   int sum = number + number2;
-  int thirdBit = 1 & (number >> 3);
-  int fithBit = 1 & (number >> 5);
-  int seventhBit = 1 & (number >> 7);
-  int eleventhBit = 1 & (number >> 11);
+  int thirdBit = 1 & (sum >> 3);
+  int fithBit = 1 & (sum >> 5);
+  int seventhBit = 1 & (sum >> 7);
+  int eleventhBit = 1 & (sum >> 11);
   printf("The sum in hexadecimal: %X\n", sum);
   printf("The 3,5,7,11 bits are: %d%d%d%d\n", thirdBit, fithBit, seventhBit, eleventhBit);
   printf("Bye!\n");
