@@ -1,7 +1,7 @@
 /******************
 Name: Noam Sayada
 ID: 216308825
-Assignment:
+Assignment: 1
 *******************/
 #include <stdio.h>
 
@@ -13,13 +13,13 @@ int main() {
   printf("What bit:\n");
   int number;
   int position;
-  printf("Please Enter a number:\n");
+  printf("Please enter a number:\n");
   scanf("%d", &number);
-  printf("Please Enter a position:\n");
+  printf("Please enter a position:\n");
   scanf("%d", &position);
   int output = (number >> position)&1;
 
-  printf("The bit in position of %d of number %d is: %d\n", number, position, output);
+  printf("The bit in position %d of number %d is: %d\n", position, number, output);
   /*Scan two integers (representing number and a position)
   Print the bit in this position. */
   
@@ -67,7 +67,7 @@ int main() {
   /* Scan two integers in octal base
   sum them up and print the result in hexadecimal base
   Print only 4 bits, in positions: 3,5,7,11 in the result. */
-  int number2=3;
+  int number2;
   printf("Please enter the first number (octal):\n");
   scanf("%o", &number);
   printf("Please enter the second number (octal):\n");
